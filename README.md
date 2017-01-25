@@ -1,4 +1,5 @@
 # How to Run
 
-Example: 
->> [xpoints,ypoints] = dymap2d(2,3,1,1,.5,6)
+Example: In Matlab import function and run
+[xpoints,ypoints] = dymap2d(.1,.2,0,0,.25,4)
+
