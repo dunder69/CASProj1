@@ -9,8 +9,11 @@ for i=1:size(xpoints,2)
 end
 
 plot(xpoints)
+xlabel('t')
+ylabel('x_t Values')
 yyaxis right
-plot(ypoints,'--')
+plot(ypoints,'--m')
+ylabel('y_t Values')
     
 
 
