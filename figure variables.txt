@@ -1,0 +1,12 @@
+For fig 2
+x0 = 0.8407
+y0 = 0.2543
+
+For figure 4:
+max_time = 500;
+parameter1_range = 0:0.001:1.5;
+parameter2 = 0.3;
+x0 = 0.1;
+y0 = 0.1;
+rho = 1.2;
+gamma = 0.3;
