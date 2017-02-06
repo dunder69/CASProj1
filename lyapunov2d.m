@@ -1,4 +1,6 @@
-%Code given in lecture sldes - we did not write this
+%The following function belongs to Matthew Fricke and
+%was taken from http://cs.unm.edu/~mfricke/CS523_2017spring/
+
 function max_lyapunovs = lyapunov2d(F, F_Jacobian, t_max, param1_range, param2, x0, y0)
 
 current_l = 0;
