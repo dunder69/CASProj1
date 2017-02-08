@@ -14,6 +14,12 @@ ylabel('x_t Values')
 yyaxis right
 plot(ypoints,'--m')
 ylabel('y_t Values')
+
+figure;
+plot(xpoints,ypoints,'.')
+title('Attractors')
+xlabel('xpoints')
+ylabel('ypoints')
     
 
 
