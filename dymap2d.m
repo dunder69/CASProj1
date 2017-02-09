@@ -20,6 +20,7 @@ plot(xpoints,ypoints,'.')
 title('Attractors')
 xlabel('xpoints')
 ylabel('ypoints')
+
     
 
 
