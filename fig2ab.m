@@ -29,5 +29,5 @@ figure;
 plot(divTimes(:,1),divTimes(:,2));
 axis([0 inf 0 inf]);
 title('Trajectory Divergence  as a Function of the Diffference in Initial Conditions');
-xlabel('Difference in Rho Value','FontSize', 11);
+xlabel('Difference in x Value','FontSize', 11);
 ylabel('Iterations Until Divergence with Delta = 0.001','FontSize', 11);

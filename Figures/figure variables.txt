@@ -2,8 +2,8 @@ For fig 2a
 delta = 0.001
 gamma = 0.3
 rho = 1.29
-x0 = 0.4465
-y0 = 0.6463
+x0 = 0.7094
+y0 = 0.7547
 
 For figure 4:
 max_time = 500;
