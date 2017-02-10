@@ -8,8 +8,8 @@ alpha = 0.2;
 beta = 0.2;
 gamma = mygamma;
 t_start = 0;
-t_transient = 100000;
-t_end = 100100;
+t_transient = 10000;
+t_end = 10100;
 
 t = t_start;
 x = x0;
