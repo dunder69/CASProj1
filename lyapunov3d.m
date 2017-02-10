@@ -34,7 +34,7 @@ while t <= t_end
         %lyapunov_expx = lyapunov_expx + deltax;
         %lyapunov_expy = lyapunov_expy + deltay;
         %lyapunov_expz = lyapunov_expz + deltaz;
-        lyapunov_exp_sum = lyapunov_exp_sum + deltax + deltay + deltaz;
+        lyapunov_exp_sum = lyapunov_exp_sum + log(deltax) + log(deltay) + log(deltaz);
     end
     t = t + delta;
 end
