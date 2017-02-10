@@ -24,11 +24,9 @@ if lyapunovSum == 0
     disp('System is conservative')
 end
         
-
-fp=sprintf('%f ', possibleFixedPoints);
-fprintf('Possible fixed points at: %s\n', fp)
 fprintf('The largest exponent is %f acheived with a rho value of %f and a gamma value of %f.\n',largestExponent,maxRho,maxGamma)
 
 plot(parameter1_range,max_lyapunovs, parameter1_range, 0, 'k.')
-xlabel('Param1: a','FontSize', 24);
+title('Lapunov Exponents');
+xlabel('Param1: Rho','FontSize', 24);
 ylabel('\lambda_{max}','FontSize', 24);

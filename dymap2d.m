@@ -9,11 +9,12 @@ for i=1:size(xpoints,2)
 end
 
 % plot(xpoints)
-% xlabel('t')
-% ylabel('x_t Values')
+% title('Complex Behavior','FontSize', 16)
+% xlabel('t','FontSize', 16)
+% ylabel('x_t Values','FontSize', 14)
 % yyaxis right
-% plot(ypoints,'--m')
-% ylabel('y_t Values')
+% plot(ypoints,'--')
+% ylabel('y_t Values','FontSize', 14)
 
 % figure;
 % quiver(xpoints,ypoints,gradient(xpoints),gradient(ypoints))

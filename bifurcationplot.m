@@ -28,6 +28,5 @@ for r = rho_start:rho_delta:rho_end
         hold on;
 end
 
-title('Bifurcation Plot')
-xlabel('Rho')
-ylabel('x')
+xlabel('Rho','FontSize', 16)
+ylabel('x','FontSize', 28)

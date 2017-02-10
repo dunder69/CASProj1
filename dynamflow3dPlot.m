@@ -7,8 +7,11 @@ for t = 1:max_time
     y = X(:,2);
     z = X(:,3);
     
-    plot3(x, y, z)
-    %pause(rate)
-    drawnow
 end
+
+plot3(x, y, z)
+title ('System 2');
+xlabel('x', 'FontSize', 16);
+ylabel('y', 'FontSize', 16);
+zlabel('z', 'FontSize', 16);
 end
