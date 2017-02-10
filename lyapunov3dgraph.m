@@ -1,17 +1,18 @@
+gammastart = 0;
+gammaend = 30;
+gammadelta = 0.01;
+gamma_range = gammastart:gammadelta:(gammaend - gammadelta);
 
-F = @(xyz,alpha,beta,gamma) [xyz(1)*xyz(2)-xyz(1)*gamma+alpha;-xyz(3)-xyz(1);beta*xyz(3)+xyz(2)];
-F_Jacobian =@(xyz,alpha,beta,gamma) [xyz(2)-gamma xyz(1) 0;-1 0 -1;0 1 beta];
+gamma = gammastart;
+index = 0;
 
-max_time = 10;
-alpha_range = 0:0.001:0.5;
-beta = 0.2;
-gamma = 5.7;
-x0 = 0.001;
-y0 = 0.001;
-z0 = 0.001;
+while gamma < gammaend
+    index = index + 1;
+    lyapunov_exp(index) = lyapunov3d(gamma);
+    gamma = gamma + gammadelta;
+end
 
-max_lyapunovs = lyapunov3d(F, F_Jacobian, max_time, alpha_range, beta, gamma, x0, y0, z0);
-
-plot(alpha_range,max_lyapunovs, alpha_range, 0, 'k.')
+plot(gamma_range,lyapunov_exp, gamma_range, 0, 'k.')
 xlabel('Param1: gamma','FontSize', 24);
 ylabel('\lambda_{max}','FontSize', 24);
+title('System 2 Lyapunov Exponents');

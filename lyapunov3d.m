@@ -1,25 +1,37 @@
+function lyapunov_exp = lyapunov3d(mygamma)
 
-%The following function belongs to Matthew Fricke and
-%was taken from http://cs.unm.edu/~mfricke/CS523_2017spring/
-%The function was slightly modified to return max values.
+x0 = 0.1;
+y0 = 0.1;
+z0 = 0.1;
+delta = 0.01;
+alpha = 0.2;
+beta = 0.2;
+gamma = mygamma;
+t_start = 0;
+t_transient = 3000;
+t_end = 3100;
 
-function max_lyapunovs = lyapunov3d(F, F_Jacobian, t_max, alpha_range, beta, gamma, x0, y0, z0)
+t = t_start;
+x = x0;
+y = y0;
+z = z0;
 
-current_l = 0;
+lyapunov_exp = 0;
 
-for alpha=alpha_range
-    current_l = current_l + 1;
-    % Initialize variables
-    xyz = [x0; y0; z0]; xyz_lengths = [1;0;0];
-    for i=1:t_max
-        J = F_Jacobian(xyz, alpha, beta, gamma);
-        xyz=F(xyz, alpha, beta, gamma);
-        % Calculate divergence rate in the direction defined by the Jacobian
-        xyz_lengths=J*xyz_lengths;
-        length=sqrt(sum(xyz_lengths.^2));% Distance formula
-        max_lyapunovs(current_l) = log(length)/i; % Calculate the average
-        
+while t <= t_end
+    xprev = x;
+    yprev = y;
+    zprev = z;
+    deltax = (x*y - x*gamma + alpha);
+    deltay = (-1*(z + x));
+    deltaz = (beta*z + y);
+    x = x + delta*deltax;
+    y = y + delta*deltay;
+    z = z + delta*deltaz;
+    if t > t_transient
+        lyapunov_exp = lyapunov_exp + log(sqrt(deltax^2 + deltay^2 + deltaz^2));
     end
+    t = t + delta;
 end
 
-end
+lyapunov_exp = lyapunov_exp/(t_end - t_transient);
