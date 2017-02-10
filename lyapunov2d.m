@@ -15,6 +15,7 @@ for param1=param1_range
     current_l = current_l + 1;
     % Initialize variables
     xy = [x0; y0]; xy_lengths = [1;0];
+    xy_lengths_sum = 0;
     for i=1:t_max
         J = F_Jacobian(xy, param1, param2);
         xy=F(xy, param1, param2);
@@ -24,6 +25,9 @@ for param1=param1_range
         max_lyapunovs(current_l) = log(length)/i; % Calculate the average
         rhos(current_l)= param1;
         gammas(current_l) = param2;
+    end
+    if param1 == 1.415
+        max_lyapunovs(current_l)
     end
 end
 

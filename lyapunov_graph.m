@@ -11,18 +11,6 @@ gamma = 0.3;
 possibleFixedPoints = [];
 
 [max_lyapunovs,largestExponent,maxRho,maxGamma] = lyapunov2d(F, F_Jacobian, max_time, parameter1_range, parameter2, x0, y0);
-
-%Summing the lyapunov exponents to see if the system is 
-%dissipative or conservative
-lyapunovSum = nansum(max_lyapunovs);
-if lyapunovSum < 0
-    lyapunovSum
-    disp('System is dissipative')
-end
-if lyapunovSum == 0
-    lyapunovSum
-    disp('System is conservative')
-end
         
 fprintf('The largest exponent is %f acheived with a rho value of %f and a gamma value of %f.\n',largestExponent,maxRho,maxGamma)
 
