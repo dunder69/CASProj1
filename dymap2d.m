@@ -8,13 +8,7 @@ for i=1:size(xpoints,2)
     xpoints(i+1) = (rho-(xpoints(i)^2)) + (gamma*ypoints(i));
 end
 
-% plot(xpoints)
-% title('Complex Behavior','FontSize', 16)
-% xlabel('t','FontSize', 16)
-% ylabel('x_t Values','FontSize', 14)
-% yyaxis right
-% plot(ypoints,'--')
-% ylabel('y_t Values','FontSize', 14)
+
 
 % figure;
 % quiver(xpoints,ypoints,gradient(xpoints),gradient(ypoints))
