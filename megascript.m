@@ -63,7 +63,7 @@ figure;
 henon_strage_attractor;
 clear;
 
-%Figure 6
+%Figure 6 (Will need to rotate this manually to get figure in paper)
 figure;
 dynamflow3dPlot([1.0 1.0 1.0],500);
 clear;
